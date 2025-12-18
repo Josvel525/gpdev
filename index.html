@@ -1,273 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exotic Kings Smoke Shop | Houston, TX</title>
-
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-
-    <!-- Master Stylesheet -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Exotic Kings</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 
-<body class="text-white">
+<body>
 
-<!-- AGE VERIFICATION MODAL (managed by age-verification.js) -->
-<div id="age-gate" class="fixed inset-0 bg-black/80 backdrop-blur-lg z-50 hidden">
-    <div class="max-w-lg mx-auto mt-24 bg-gray-900 border-2 border-primary rounded-2xl shadow-2xl p-8 text-center">
-        <p class="text-sm uppercase tracking-[0.35em] text-primary mb-3">Welcome</p>
-        <h1 class="text-3xl font-black text-secondary text-neon">Are you 21 years or older?</h1>
-        <p class="text-lg text-gray-200 mt-3 mb-6">You must be at least 21 to enter Exotic Kings Smoke Shop online experience.</p>
-        <div class="flex flex-col sm:flex-row gap-3 justify-center">
-            <button id="age-confirm" class="flex-1 px-6 py-3 rounded-full bg-primary text-gray-900 font-bold shadow-lg hover:bg-primary/80">Yes, I am 21+</button>
-            <button id="age-deny" class="flex-1 px-6 py-3 rounded-full border-2 border-secondary text-secondary font-bold hover:bg-secondary hover:text-background-dark">No, Exit</button>
-        </div>
-        <p class="text-xs text-gray-400 mt-4">By entering, you confirm that you are of legal age in your area.</p>
-    </div>
+<!-- AGE GATE -->
+<div id="age-gate">
+  <div class="age-box">
+    <h2>Are you 21 or older?</h2>
+    <button id="age-yes">Yes</button>
+    <button id="age-no">No</button>
+  </div>
 </div>
 
-<!-- NAVIGATION -->
-<header id="navbar" class="fixed top-0 w-full z-50 bg-gray-900/80 border-b-2 border-primary shadow-2xl backdrop-blur-md">
-    <div class="max-w-7xl mx-auto px-4 flex justify-between items-center h-16 relative">
-        <a href="index.html" class="flex items-center" aria-label="Exotic Kings Smoke Shop home">
-            <img src="logo.png" alt="Exotic Kings Smoke Shop logo" class="nav-logo">
-        </a>
+<!-- NAV -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo.png" alt="Exotic Kings">
+    </a>
 
-        <!-- Hamburger Icon -->
-        <div id="hamburger" class="lg:hidden cursor-pointer p-2">
-            <div class="hamburger-line line-1 h-1 w-7 bg-white rounded-full my-1"></div>
-
-        <!-- Mobile Menu -->
-        <nav id="mobile-menu" class="lg:hidden absolute right-4 top-16 w-56 bg-gray-900/95 border border-primary rounded-xl shadow-2xl overflow-hidden hidden">
-            <a href="index.html" class="block px-4 py-3 hover:bg-white/10">Home</a>
-            <a href="products.html" class="block px-4 py-3 hover:bg-white/10">Products</a>
-            <a href="promotions.html" class="block px-4 py-3 hover:bg-white/10">Promotions</a>
-        </nav>
-
-            <div class="hamburger-line line-2 h-1 w-7 bg-white rounded-full my-1"></div>
-            <div class="hamburger-line line-3 h-1 w-7 bg-white rounded-full my-1"></div>
-        </div>
-
-        <!-- Desktop Nav -->
-        <nav class="hidden lg:block">
-            <ul class="flex space-x-8">
-                <li><a href="#hero" class="text-lg hover:text-primary">Home</a></li>
-                <li><a href="#story" class="text-lg hover:text-primary">Our Story</a></li>
-                <li><a href="products.html" class="text-lg hover:text-primary">Products</a></li>
-                <li><a href="promotions.html" class="text-lg text-secondary">Promotions</a></li>
-                <li><a href="#contact" class="text-lg hover:text-primary">Contact Us</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
-
-<!-- MOBILE MENU -->
-<nav id="nav-menu" class="fixed top-0 right-[-280px] w-64 h-full bg-gray-900/95 z-40 shadow-xl border-l-2 border-primary backdrop-blur-md transition-all duration-300">
-    <ul class="pt-20 space-y-2">
-        <li><a href="#hero" class="block py-3 px-6 text-xl text-secondary text-neon">Home</a></li>
-        <li><a href="#story" class="block py-3 px-6 text-xl text-secondary text-neon">Our Story</a></li>
-        <li><a href="products.html" class="block py-3 px-6 text-xl text-secondary text-neon">Products</a></li>
-        <li><a href="promotions.html" class="block py-3 px-6 text-xl text-secondary text-neon">Promotions</a></li>
-        <li><a href="#contact" class="block py-3 px-6 text-xl text-secondary text-neon">Contact Us</a></li>
+    <ul class="nav-links">
+      <li><a href="products.html">Products</a></li>
+      <li><a href="promos.html">Promos</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
+
+    <button id="hamburger">☰</button>
+  </div>
+
+  <div id="mobile-menu">
+    <a href="products.html">Products</a>
+    <a href="promos.html">Promos</a>
+    <a href="contact.html">Contact</a>
+  </div>
 </nav>
 
-<!-- HERO SLIDESHOW -->
-<section id="hero" class="relative pt-16 h-[60vh] md:h-[75vh] overflow-hidden">
-    <div id="slideshow-container" class="absolute inset-0">
-        <div class="slide absolute inset-0 active" style="background-image:url('ekss.jpg');"></div>
-        <div class="slide absolute inset-0" style="background-image:url('ekss2.jpg');"></div>
-        <div class="slide absolute inset-0" style="background-image:url('product2.jpg');"></div>
-    </div>
+<main class="content">
+  <h1>Welcome to Exotic Kings</h1>
+</main>
 
-    <div class="absolute bottom-0 w-full text-center p-4 bg-gradient-to-t from-background-dark/90 via-background-dark/50 to-transparent">
-        <h1 class="text-4xl md:text-6xl font-extrabold text-secondary text-neon hero-copy">Exotic Kings Smoke Shop</h1>
-        <p class="text-xl md:text-2xl hero-copy mt-3">Premium Vapes, Kratom, CBD, & Glass — Houston, TX</p>
-        <div class="mt-4 flex flex-col sm:flex-row justify-center items-center gap-3">
-            <a href="promotions.html" class="inline-block px-8 py-3 bg-primary text-white font-bold rounded-full shadow-lg hover:bg-primary/80">
-                See Today's Deals
-            </a>
-            <a href="https://www.google.com/maps/dir/?api=1&destination=9466+Hammerly+Blvd,+Houston,+TX+77080" target="_blank" rel="noopener" class="inline-block px-8 py-3 bg-secondary text-background-dark font-bold rounded-full shadow-lg hover:bg-secondary/80">
-                Get Directions
-            </a>
-        </div>
-    </div>
-</section>
-
-<!-- WEEKEND PROMOTIONS -->
-<section id="promos" class="py-16 bg-background-dark/80">
-    <div class="max-w-7xl mx-auto px-4 text-center">
-        <h2 class="text-4xl font-bold text-secondary text-neon mb-12">👑 Christmas Specials 👑</h2>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-            <!-- Promo 1 -->
-            <div class="promo-card bg-gray-800/70 p-6 rounded-xl border-2 border-primary shadow-xl">
-                <img src="product4.jpg" alt="Promo 1" class="w-full rounded-lg mb-4 shadow-md">
-                <h3 class="text-2xl font-bold mb-2">Vape King Bundle</h3>
-                <p class="text-lg text-secondary mb-4">Buy 2, Get 1 <span class="text-red-400 font-extrabold">50% OFF</span></p>
-                <a href="vape-pens.html" class="block w-full py-2 bg-secondary text-background-dark font-bold rounded-full text-center hover:bg-secondary/80">Shop Vapes</a>
-            </div>
-
-            <!-- Promo 2 -->
-            <div class="promo-card bg-gray-800/70 p-6 rounded-xl border-2 border-primary shadow-xl">
-                <img src="product1.jpg" alt="Promo 2" class="w-full rounded-lg mb-4 shadow-md">
-                <h3 class="text-2xl font-bold mb-2">Kratom Power Up</h3>
-                <p class="text-lg text-secondary mb-4">All Kratom: <span class="text-red-400 font-extrabold">25% OFF</span></p>
-                <a href="thc-kratom.html" class="block w-full py-2 bg-secondary text-background-dark font-bold rounded-full text-center hover:bg-secondary/80">Shop Kratom</a>
-            </div>
-
-            <!-- Promo 3 -->
-            <div class="promo-card bg-gray-800/70 p-6 rounded-xl border-2 border-primary shadow-xl">
-                <img src="product3.jpg" alt="Promo 3" class="w-full rounded-lg mb-4 shadow-md">
-                <h3 class="text-2xl font-bold mb-2">Glassware Special</h3>
-                <p class="text-lg text-secondary mb-4">Spend $50+, get <span class="text-red-400 font-extrabold">$15 OFF</span></p>
-                <a href="glassware.html" class="block w-full py-2 bg-secondary text-background-dark font-bold rounded-full text-center hover:bg-secondary/80">View Glass</a>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- SHOP BY CATEGORY PREVIEW -->
-<section class="py-16 bg-gray-900/70">
-    <div class="max-w-7xl mx-auto px-4">
-        <div class="text-center mb-10">
-            <p class="uppercase tracking-[0.25em] text-primary mb-3">Browse</p>
-            <h2 class="text-4xl font-extrabold text-secondary text-neon">Shop by Category</h2>
-            <p class="text-lg text-gray-200 mt-2">Jump straight to the products you care about with dedicated pages.</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <a href="vape-pens.html" class="product-card flex flex-col text-center border-primary/60 hover:border-primary">
-                <div class="p-6 bg-gradient-to-br from-pink-500/20 via-purple-500/20 to-blue-500/20">
-                    <p class="uppercase text-sm tracking-[0.2em] text-primary mb-3">Category</p>
-                    <h3 class="text-2xl font-bold text-secondary">Vape Pens</h3>
-                    <p class="text-sm text-gray-200 mt-2">Flavor-packed disposables and rechargeable favorites ready to go.</p>
-                </div>
-                <div class="p-4 mt-auto">
-                    <span class="inline-flex items-center justify-center px-4 py-2 rounded-lg bg-primary text-gray-900 font-semibold">Explore Vape Pens</span>
-                </div>
-            </a>
-
-            <a href="thc-kratom.html" class="product-card flex flex-col text-center border-primary/60 hover:border-primary">
-                <div class="p-6 bg-gradient-to-br from-amber-400/25 via-pink-500/20 to-purple-500/20">
-                    <p class="uppercase text-sm tracking-[0.2em] text-primary mb-3">Category</p>
-                    <h3 class="text-2xl font-bold text-secondary">THC &amp; Kratom</h3>
-                    <p class="text-sm text-gray-200 mt-2">Elevated botanicals, gummies, and shots to match your vibe.</p>
-                </div>
-                <div class="p-4 mt-auto">
-                    <span class="inline-flex items-center justify-center px-4 py-2 rounded-lg bg-primary text-gray-900 font-semibold">Explore THC &amp; Kratom</span>
-                </div>
-            </a>
-
-            <a href="glassware.html" class="product-card flex flex-col text-center border-primary/60 hover:border-primary">
-                <div class="p-6 bg-gradient-to-br from-cyan-400/25 via-blue-500/20 to-purple-500/20">
-                    <p class="uppercase text-sm tracking-[0.2em] text-primary mb-3">Category</p>
-                    <h3 class="text-2xl font-bold text-secondary">Glassware</h3>
-                    <p class="text-sm text-gray-200 mt-2">Durable rigs, bowls, and accessories with a clean, modern look.</p>
-                </div>
-                <div class="p-4 mt-auto">
-                    <span class="inline-flex items-center justify-center px-4 py-2 rounded-lg bg-primary text-gray-900 font-semibold">Explore Glassware</span>
-                </div>
-            </a>
-        </div>
-    </div>
-</section>
-
-<!-- OUR STORY -->
-<section id="story" class="py-16 bg-primary/10">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-        <h2 class="text-4xl font-bold text-primary text-neon mb-6">Our Story</h2>
-
-        <div class="bg-gray-900/70 p-8 rounded-2xl shadow-2xl border-2 border-primary/50">
-            <p class="text-lg text-gray-200 leading-relaxed">
-                Exotic Kings was founded with a simple mission: to bring the highest quality, most sought-after smoking,
-                vaping, and wellness products to the Houston community. We pride ourselves on curating a collection that
-                features the latest exotics and trusted classics. Stop by today and experience the difference—where premium
-                quality meets unbeatable customer service.
-            </p>
-
-            <div class="mt-6">
-                <a href="#contact" class="inline-block py-2 px-6 border-2 border-secondary text-secondary rounded-full hover:bg-secondary hover:text-background-dark">
-                    Find Our Location
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- FOOTER -->
-<footer id="contact" class="bg-gray-900 text-center p-8 border-top-4 border-primary">
-    <div class="max-w-4xl mx-auto space-y-4 px-4">
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-2 text-lg leading-relaxed">
-            <a href="https://www.google.com/maps/dir/?api=1&destination=9466+Hammerly+Blvd,+Houston,+TX+77080" class="underline hover:text-primary" target="_blank" rel="noopener">
-                9466 Hammerly Blvd, Houston, TX 77080
-            </a>
-            <span class="hidden sm:inline text-gray-300">•</span>
-            <span class="text-base sm:text-lg">Open 24 Hours · 365 Days</span>
-        </div>
-
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-2 text-lg leading-relaxed">
-            <span>Phone: (713) 485-0454</span>
-            <span class="hidden sm:inline text-gray-300">•</span>
-            <a href="mailto:info@exotickingssmokehtx.com" class="underline hover:text-primary break-words sm:break-normal">info@exotickingssmokehtx.com</a>
-        </div>
-
-        <p class="text-sm text-gray-400">&copy; <span id="year"></span> Exotic Kings Smoke Shop. All Rights Reserved.</p>
-    </div>
-</footer>
-
-<script src="age-verification.js"></script>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    /* Footer Year */
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    /* Mobile Menu */
-    document.getElementById("hamburger").addEventListener("click", () => {
-        document.getElementById("nav-menu").classList.toggle("right-0");
-        document.getElementById("hamburger").classList.toggle("open");
-    });
-
-    /* Slideshow */
-    const slides = document.querySelectorAll(".slide");
-    let currentSlide = 0;
-    setInterval(() => {
-        slides[currentSlide].classList.remove("active");
-        currentSlide = (currentSlide + 1) % slides.length;
-        slides[currentSlide].classList.add("active");
-    }, 4000);
-});
-</script>
-
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const hamburger = document.getElementById("hamburger");
-  const menu = document.getElementById("mobile-menu");
-  if (!hamburger || !menu) return;
-
-  const closeMenu = () => menu.classList.add("hidden");
-  const toggleMenu = () => menu.classList.toggle("hidden");
-
-  hamburger.addEventListener("click", (e) => {
-    e.stopPropagation();
-    toggleMenu();
-  });
-
-  // Close when clicking anywhere else
-  document.addEventListener("click", () => closeMenu());
-
-  // Close after clicking a menu link
-  menu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => closeMenu()));
-});
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
